@@ -1,0 +1,35 @@
+{
+  "name": "Jiyo re Bahubali",
+  "description": "Play jiyo re bahubali sound once a solution is accepted in Leetcode",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "activeTab", "scripting", "alarms"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/jiyo_re_bahubali16.png",
+      "32": "/images/jiyo_re_bahubali32.png",
+      "48": "/images/jiyo_re_bahubali48.png",
+      "128": "/images/jiyo_re_bahubali128.png"
+    }
+  },
+  "icons": {
+    "16": "/images/jiyo_re_bahubali16.png",
+    "32": "/images/jiyo_re_bahubali32.png",
+    "48": "/images/jiyo_re_bahubali48.png",
+    "128": "/images/jiyo_re_bahubali128.png"
+  },
+  "options_page": "options.html",
+  "web_accessible_resources": [
+    {"resources": ["bahubali.mp3"], "matches": ["https://leetcode.com/*"]}
+  ],
+  "content_scripts": [
+		{
+			"matches": ["https://leetcode.com/*"],
+			"js": ["cont.js"]
+		}
+	]
+}
